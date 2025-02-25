@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Breaking the Unthinkable.">
+  <meta name="author" content="bluepencil">
+  <meta property="og:title" content="bluepencil.profile">
+  <meta property="og:description" content="Breaking the Unthinkable.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_og.png">
+  <meta property="og:url" content="https://bpc.blue/">
+  <meta property="og:type" content="website">
   <title>bluepencil.profile</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon_64.png" type="image/png">
   <script>
     function toggleDarkMode() {
       const body = document.body;
       const isDark = body.getAttribute("data-theme") === "dark";
-  
       if (isDark) {
         body.removeAttribute("data-theme");
         localStorage.setItem("theme", "light");
@@ -29,23 +37,22 @@
   <style>
     body {
       font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-      background-color: #faf9f5;
+      background-color: #e1f0ff;
       overflow-x: hidden;
       margin: 0;
       padding: 0;
       color: #000;
       transition: background 0.3s ease, color 0.3s ease;
     }
-    /* 다크 모드 적용 */
     body[data-theme="dark"] {
-      background-color: #141414;
-      color: #f0efea;
+      background-color: #000f1e;
+      color: #faf9f5;
     }
     body[data-theme="dark"] .alt-nickname {
       color: #a0a0a0;
     }
     body[data-theme="dark"] .container {
-      background-color: #191919;
+      background-color: #00152a;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
     .toggle-container {
@@ -79,15 +86,14 @@
     }
     body[data-theme="dark"] .toggle-handle {
       left: 27px;
-      background: #f0efea;
+      background: #f2efe4;
     }
-
     .container {
       width: 90%;
       max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      background: #f0efea;
+      background: #f5faff;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       box-sizing: border-box;
@@ -122,13 +128,14 @@
     .alt-nickname {
       color: #333;
       margin: 5px 0;
+      line-height: 1.6;
     }
     section {
       text-align: center;
       margin-top: 40px;
     }
     h2 {
-      border-bottom: 2px solid #a0a0a0;
+      border-bottom: none;
       padding-bottom: 5px;
       margin-bottom: 20px;
       font-weight: 600;
@@ -184,10 +191,9 @@
     <header>
       <img src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bluepencil_logo.webp" alt="bluepencil Logo" class="logo">
       <h1 class="accent">bluepencil</h1>
-      <p class="alt-nickname">블루펜슬, ブルーペンシル</p>
+      <p class="alt-nickname">블루펜슬<br>ブルーペンシル</p>
       <p><em>Breaking the Unthinkable.</em></p>
     </header>
-    
 
     <section>
       <h2>Contact</h2>
@@ -217,7 +223,7 @@
     </section>
 
     <section>
-      <h2>♥️</h2>
+      <h2><i class="fa-solid fa-heart"></i></h2>
       <img src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/rin.webp" alt="Shima Rin icon" class="footer-image">
     </section>
 
