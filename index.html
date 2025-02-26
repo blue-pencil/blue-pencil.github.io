@@ -27,25 +27,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon.ico" type="image/x-icon">
   <link rel="icon" href="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon_64.png" type="image/png">
+
   <script>
-    function toggleDarkMode() {
+    function applyTheme(isDark) {
       const body = document.body;
-      const isDark = body.getAttribute("data-theme") === "dark";
+      const toggleHandle = document.querySelector(".toggle-handle");
       if (isDark) {
-        body.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-      } else {
         body.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
+        toggleHandle.style.left = "27px";
+      } else {
+        body.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        toggleHandle.style.left = "3px";
       }
+    }
+    function toggleDarkMode() {
+      const isDark = document.body.getAttribute("data-theme") === "dark";
+      applyTheme(!isDark);
     }
     window.onload = function () {
       const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark") {
-        document.body.setAttribute("data-theme", "dark");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+      if (savedTheme) {
+        applyTheme(savedTheme === "dark");
+      } else {
+        applyTheme(prefersDark);
       }
     };
-  </script>    
+  </script>
+
   <style>
     body {
       font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
