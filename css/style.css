@@ -1,0 +1,276 @@
+body {
+    font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: #e1f0ff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+    background-color: #000f1e;
+    color: #faf9f5;
+}
+
+body[data-theme="dark"] .alt-nickname {
+    color: #a0a0a0;
+}
+
+body[data-theme="dark"] .container {
+    background-color: #00152a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 10px auto;
+}
+
+.toggle-switch {
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+body[data-theme="dark"] .toggle-switch {
+    background: #007FFF;
+}
+
+.toggle-handle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: left 0.3s ease, background 0.3s ease;
+}
+
+body[data-theme="dark"] .toggle-handle {
+    left: 27px;
+    background: #f2efe4;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f5faff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        max-width: 100%;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.accent {
+    color: #007FFF;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.alt-nickname {
+    color: #333;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+h2 {
+    border-bottom: none;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.service-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px;
+    padding: 12px 20px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    width: 180px;
+    text-align: center;
+}
+
+.service-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin: 8px;
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.icon-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+body[data-theme="dark"] .tooltip-text {
+    background-color: #f2efe4;
+    color: #000;
+}
+
+body[data-theme="dark"] .tooltip-text::after {
+    border-color: #f2efe4 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text,
+.tooltip-container:focus .tooltip-text,
+.tooltip-container:active .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.discord {
+    background-color: #5865F2;
+}
+
+.telegram {
+    background-color: #0088cc;
+}
+
+.email {
+    background-color: #D44638;
+}
+
+.twitter {
+    background-color: #1DA1F2;
+}
+
+.bluesky {
+    background-color: #0085FF;
+}
+
+.spotify {
+    background-color: #1DB954;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.steam {
+    background-color: #171A21;
+}
+
+.project {
+    background-color: #007FFF;
+}
+
+@media (max-width: 600px) {
+    .service-button {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+}
+
+.footer-image {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 14px;
+    color: #777;
+}

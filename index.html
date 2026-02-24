@@ -1,264 +1,96 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bluepencil.profile</title>
   <meta name="description" content="Breaking the Unthinkable.">
   <meta name="author" content="bluepencil">
-
+  <link rel="canonical" href="https://bpc.blue/">
+  <meta name="theme-color" content="#007fff" />
   <meta property="og:url" content="https://bpc.blue/">
   <meta property="og:title" content="bluepencil.profile">
   <meta property="og:description" content="Breaking the Unthinkable.">
-  <meta property="og:logo" content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon_64.png">
-  <meta property="og:image" content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
+  <meta property="og:logo"
+    content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon_64.png">
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@bpc_blue">
-  <meta property="twitter:domain" content="bpc.blue">
-  <meta property="twitter:url" content="https://bpc.blue/">
   <meta name="twitter:title" content="bluepencil.profile">
   <meta name="twitter:description" content="Breaking the Unthinkable.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_og.png">
-
-  <title>bluepencil.profile</title>
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css" />
+  <meta name="twitter:image"
+    content="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_og.png">
+  <link rel="icon" href="assets/img/bp_favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/img/bp_favicon_64.png" type="image/png">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon.ico" type="image/x-icon">
-  <link rel="icon" href="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bp_favicon_64.png" type="image/png">
-
-  <script>
-    function applyTheme(isDark) {
-      const body = document.body;
-      const toggleHandle = document.querySelector(".toggle-handle");
-      if (isDark) {
-        body.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-        toggleHandle.style.left = "27px";
-      } else {
-        body.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-        toggleHandle.style.left = "3px";
-      }
-    }
-    function toggleDarkMode() {
-      const isDark = document.body.getAttribute("data-theme") === "dark";
-      applyTheme(!isDark);
-    }
-    window.onload = function () {
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  
-      if (savedTheme) {
-        applyTheme(savedTheme === "dark");
-      } else {
-        applyTheme(prefersDark);
-      }
-    };
-  </script>
-
-  <style>
-    body {
-      font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-      background-color: #e1f0ff;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-      color: #000;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    body[data-theme="dark"] {
-      background-color: #000f1e;
-      color: #faf9f5;
-    }
-    body[data-theme="dark"] .alt-nickname {
-      color: #a0a0a0;
-    }
-    body[data-theme="dark"] .container {
-      background-color: #00152a;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-    .toggle-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 30px auto 10px auto;
-    }
-    .toggle-switch {
-      width: 50px;
-      height: 25px;
-      background: #ccc;
-      border-radius: 25px;
-      position: relative;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    body[data-theme="dark"] .toggle-switch {
-      background: #007FFF;
-    }
-    .toggle-handle {
-      width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 3px;
-      transform: translateY(-50%);
-      transition: left 0.3s ease, background 0.3s ease;
-    }
-    body[data-theme="dark"] .toggle-handle {
-      left: 27px;
-      background: #f2efe4;
-    }
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f5faff;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      box-sizing: border-box;
-    }
-    @media (max-width: 600px) {
-      .container {
-        width: 95%;
-        max-width: 100%;
-        padding: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-    }
-    .accent {
-      color: #007FFF;
-    }
-    header {
-      text-align: center;
-      padding: 20px 0;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 10px auto;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .logo:hover {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    }
-    .alt-nickname {
-      color: #333;
-      margin: 5px 0;
-      line-height: 1.6;
-    }
-    section {
-      text-align: center;
-      margin-top: 40px;
-    }
-    h2 {
-      border-bottom: none;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-    .service-button {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 15px;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s, box-shadow 0.3s;
-      width: 200px;
-      text-align: center;
-    }
-    .service-button:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .discord { background-color: #5865F2; }
-    .telegram { background-color: #0088cc; }
-    .email { background-color: #D44638; }
-    .twitter { background-color: #1DA1F2; }
-    .bluesky { background-color: #0085FF; }
-    .spotify { background-color: #1DB954; }
-    .youtube { background-color: #FF0000; }
-    .steam { background-color: #171A21; }
-    .project { background-color: #007FFF; }
-    @media (max-width: 600px) {
-      .service-button {
-        width: 90%;
-        margin: 10px auto;
-        display: block;
-      }
-    }
-    .footer-image {
-      width: 100%;
-      max-width: 80px;
-      height: auto;
-      margin: 20px auto;
-      display: block;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 10px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="container">
     <header>
-      <img src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/bluepencil_logo.webp" alt="bluepencil Logo" class="logo">
+      <img src="assets/img/bluepencil_logo.webp" alt="bluepencil Logo" class="logo">
       <h1 class="accent">bluepencil</h1>
       <p class="alt-nickname">블루펜슬<br>ブルーペンシル</p>
-      <p><em>Breaking the Unthinkable.</em></p>
+      <p><em><b>Breaking the Unthinkable.</b></em></p>
     </header>
 
     <section>
       <h2>Contact</h2>
-      <a class="service-button discord" href="#"><i class="fab fa-discord"></i> bluepencil</a>
-      <a class="service-button telegram" href="https://t.me/bluepencil" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-      <a class="service-button email" href="mailto:bluepencil@yahoo.com"><i class="fas fa-envelope"></i> Email</a>
+      <a class="icon-button discord tooltip-container" href="javascript:void(0);" tabindex="0">
+        <i class="fab fa-discord"></i>
+        <span class="tooltip-text"><small>Username:</small><br><b>bluepencil</b></span>
+      </a>
+      <a class="icon-button telegram" href="https://t.me/bluepencil" target="_blank" title="Telegram"><i
+          class="fab fa-telegram"></i></a>
+      <a class="icon-button email" href="mailto:bluepencil@yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
     </section>
 
     <section>
-      <h2>Social</h2>
-      <a class="service-button twitter" href="https://x.com/bpc_blue" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a class="service-button bluesky" href="https://bsky.app/profile/bluepencil.bsky.social" target="_blank"><i class="fas fa-feather-alt"></i> Bluesky</a>
-      <a class="service-button spotify" href="https://open.spotify.com/user/36snujpp9wat23uzlh0a7w8em" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+      <h2>Socials</h2>
+      <a class="icon-button twitter" href="https://x.com/bpc_blue" target="_blank" title="Twitter"><i
+          class="fab fa-twitter"></i></a>
+      <a class="icon-button bluesky" href="https://bsky.app/profile/bluepencil.bsky.social" target="_blank"
+        title="Bluesky"><i class="fas fa-feather-alt"></i></a>
+      <a class="icon-button spotify" href="https://open.spotify.com/user/36snujpp9wat23uzlh0a7w8em" target="_blank"
+        title="Spotify"><i class="fab fa-spotify"></i></a>
     </section>
 
     <section>
-      <h2>Game</h2>
-      <a class="service-button youtube" href="https://www.youtube.com/@Blue.P" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-      <a class="service-button steam" href="https://s.team/p/hcp-wpww" target="_blank"><i class="fab fa-steam"></i> Steam</a>
+      <h2>Games</h2>
+      <a class="icon-button youtube" href="https://www.youtube.com/@Blue.P" target="_blank" title="YouTube"><i
+          class="fab fa-youtube"></i></a>
+      <a class="icon-button steam" href="https://s.team/p/hcp-wpww" target="_blank" title="Steam"><i
+          class="fab fa-steam"></i></a>
     </section>
 
     <section>
-      <h2>Project</h2>
-      <a class="service-button project" href="#">Weekard</a>
-      <a class="service-button project" href="#">bpict</a>
-      <a class="service-button project" href="#">Initiv</a>
+      <h2>Projects</h2>
+      <a class="service-button project" href="https://t.bpc.blue/" target="_blank"><i class="fas fa-blog"></i> Blog</a>
+      <a class="service-button project" href="https://ba-fav.bpc.blue/" target="_blank"><i class="fas fa-trophy"></i>
+        블루아카 최애월드컵</a>
+      <a class="service-button project" href="https://t.me/bpict" target="_blank"><i class="fas fa-newspaper"></i>
+        bpict</a>
     </section>
 
     <section>
-      <h2><i class="fa-solid fa-heart"></i></h2>
-      <img src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/rin.webp" alt="Shima Rin icon" class="footer-image">
+      <h2><i class="fas fa-heart" style="font-weight: 900;"></i></h2>
+      <img src="assets/img/rin.webp" alt="Shima Rin icon" class="footer-image">
     </section>
 
     <footer>
-      <p>© 2025 bluepencil.</p>
+      <p>© 2026 bluepencil.</p>
       <div class="toggle-container" onclick="toggleDarkMode()">
         <div class="toggle-switch">
           <div class="toggle-handle"></div>
         </div>
       </div>
-    </footer>      
+    </footer>
   </div>
 </body>
+
 </html>
