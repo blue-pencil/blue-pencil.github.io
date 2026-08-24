@@ -4,7 +4,7 @@ function applyTheme(isDark) {
   if (isDark) {
     body.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
-    toggleHandle.style.left = "27px";
+    toggleHandle.style.left = "25px";
   } else {
     body.removeAttribute("data-theme");
     localStorage.setItem("theme", "light");

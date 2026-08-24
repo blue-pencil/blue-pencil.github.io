@@ -31,68 +31,102 @@
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <img
-        src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/assets/img/bluepencil_logo.webp"
-        alt="bluepencil Logo" class="logo">
-      <h1 class="accent">bluepencil</h1>
-      <p class="alt-nickname">블루펜슬<br>ブルーペンシル</p>
-      <p><em><b>Breaking the Unthinkable.</b></em></p>
-    </header>
-
-    <section>
-      <h2>Contact</h2>
-      <a class="icon-button discord tooltip-container" href="javascript:void(0);" tabindex="0">
-        <i class="fab fa-discord"></i>
-        <span class="tooltip-text"><small>Username:</small><br><b>bluepencil</b></span>
-      </a>
-      <a class="icon-button telegram" href="https://t.me/bluepencil" target="_blank" title="Telegram"><i
-          class="fab fa-telegram"></i></a>
-      <a class="icon-button email" href="mailto:bluepencil@yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
-    </section>
-
-    <section>
-      <h2>Socials</h2>
-      <a class="icon-button twitter" href="https://x.com/bpc_blue" target="_blank" title="Twitter"><i
-          class="fab fa-twitter"></i></a>
-      <a class="icon-button bluesky" href="https://bsky.app/profile/bluepencil.bsky.social" target="_blank"
-        title="Bluesky"><i class="fas fa-feather-alt"></i></a>
-      <a class="icon-button spotify" href="https://open.spotify.com/user/36snujpp9wat23uzlh0a7w8em" target="_blank"
-        title="Spotify"><i class="fab fa-spotify"></i></a>
-    </section>
-
-    <section>
-      <h2>Games</h2>
-      <a class="icon-button youtube" href="https://www.youtube.com/@Blue.P" target="_blank" title="YouTube"><i
-          class="fab fa-youtube"></i></a>
-      <a class="icon-button steam" href="https://s.team/p/hcp-wpww" target="_blank" title="Steam"><i
-          class="fab fa-steam"></i></a>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <a class="service-button project" href="https://t.bpc.blue/" target="_blank"><i class="fas fa-blog"></i> Blog</a>
-      <a class="service-button project" href="https://ba-fav.bpc.blue/" target="_blank"><i class="fas fa-trophy"></i>
-        블루아카 최애월드컵</a>
-      <a class="service-button project" href="https://t.me/bpict" target="_blank"><i class="fas fa-newspaper"></i>
-        bpict</a>
-    </section>
-
-    <section>
-      <h2><i class="fas fa-heart" style="font-weight: 900;"></i></h2>
-      <img src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/assets/img/rin.webp"
-        alt="Shima Rin icon" class="footer-image">
-    </section>
-
-    <footer>
-      <p>© 2026 bluepencil.</p>
-      <div class="toggle-container" onclick="toggleDarkMode()">
-        <div class="toggle-switch">
-          <div class="toggle-handle"></div>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <img
+          src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/assets/img/bluepencil_logo.webp"
+          alt="bluepencil Logo" class="logo">
+        <h1 class="accent">bluepencil</h1>
+        <p class="alt-nickname">블루펜슬<br>ブルーペンシル</p>
+        <p class="tagline"><em><b>Breaking the Unthinkable.</b></em></p>
+        <div class="toggle-container" onclick="toggleDarkMode()">
+          <div class="toggle-switch">
+            <div class="toggle-handle"></div>
+          </div>
         </div>
       </div>
-    </footer>
+    </aside>
+
+    <main class="main-content">
+      <section class="card">
+        <h2>Contact</h2>
+        <div class="icon-group">
+          <a class="icon-button discord" href="javascript:void(0);" tabindex="0">
+            <i class="fab fa-discord"></i>
+            <span class="discord-swap">
+              <span class="discord-default">Discord</span>
+              <span class="discord-hover">bluepencil</span>
+            </span>
+            <span class="tooltip-text"><small>Username:</small><br><b>bluepencil</b></span>
+          </a>
+          <a class="icon-button telegram" href="https://t.me/bluepencil" target="_blank">
+            <i class="fab fa-telegram"></i>
+            <span class="label">Telegram</span>
+          </a>
+          <a class="icon-button email" href="mailto:bluepencil@yahoo.com">
+            <i class="fas fa-envelope"></i>
+            <span class="label">Email</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Socials</h2>
+        <div class="icon-group">
+          <a class="icon-button twitter" href="https://x.com/bpc_blue" target="_blank">
+            <i class="fab fa-twitter"></i>
+            <span class="label">Twitter</span>
+          </a>
+          <a class="icon-button bluesky" href="https://bsky.app/profile/bluepencil.bsky.social" target="_blank">
+            <i class="fas fa-feather-alt"></i>
+            <span class="label">Bluesky</span>
+          </a>
+          <a class="icon-button spotify" href="https://open.spotify.com/user/36snujpp9wat23uzlh0a7w8em" target="_blank">
+            <i class="fab fa-spotify"></i>
+            <span class="label">Spotify</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Games</h2>
+        <div class="icon-group">
+          <a class="icon-button youtube" href="https://www.youtube.com/@Blue.P" target="_blank">
+            <i class="fab fa-youtube"></i>
+            <span class="label">YouTube</span>
+          </a>
+          <a class="icon-button steam" href="https://s.team/p/hcp-wpww" target="_blank">
+            <i class="fab fa-steam"></i>
+            <span class="label">Steam</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Projects</h2>
+        <div class="project-group">
+          <a class="service-button project" href="https://t.bpc.blue/" target="_blank"><i class="fas fa-blog"></i>
+            Blog</a>
+          <a class="service-button project" href="https://ba-fav.bpc.blue/" target="_blank"><i
+              class="fas fa-trophy"></i>
+            블루아카 최애월드컵</a>
+          <a class="service-button project" href="https://t.me/bpict" target="_blank"><i class="fas fa-newspaper"></i>
+            bpict</a>
+        </div>
+      </section>
+
+      <section class="card card-fav">
+        <h2><i class="fas fa-heart" style="font-weight: 900;"></i></h2>
+        <img
+          src="https://raw.githubusercontent.com/blue-pencil/blue-pencil.github.io/refs/heads/main/assets/img/rin.webp"
+          alt="Shima Rin icon" class="footer-image">
+      </section>
+
+      <footer>
+        <p>© 2026 bluepencil.</p>
+      </footer>
+    </main>
   </div>
 </body>
 

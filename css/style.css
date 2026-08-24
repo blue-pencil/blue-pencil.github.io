@@ -1,218 +1,280 @@
-body {
-    font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    background-color: #e1f0ff;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    color: #000;
-    transition: background 0.3s ease, color 0.3s ease;
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body[data-theme="dark"] {
-    background-color: #000f1e;
-    color: #faf9f5;
-}
-
-body[data-theme="dark"] .alt-nickname {
-    color: #a0a0a0;
-}
-
-body[data-theme="dark"] .container {
-    background-color: #00152a;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.toggle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto 10px auto;
-}
-
-.toggle-switch {
-    width: 50px;
-    height: 25px;
-    background: #ccc;
-    border-radius: 25px;
-    position: relative;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-body[data-theme="dark"] .toggle-switch {
-    background: #007FFF;
-}
-
-.toggle-handle {
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 3px;
-    transform: translateY(-50%);
-    transition: left 0.3s ease, background 0.3s ease;
-}
-
-body[data-theme="dark"] .toggle-handle {
-    left: 27px;
-    background: #f2efe4;
-}
-
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f5faff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 95%;
-        max-width: 100%;
-        padding: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+body {
+    font-family: "Barlow", "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #e1f0ff;
+    color: #111827;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    max-width: 840px;
+    margin: 0 auto;
+    min-height: 100vh;
+    animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.sidebar {
+    width: 224px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #c8ddf0;
+    padding: 40px 28px;
+    transition: border-color 0.3s ease;
+}
+
+.sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.sidebar h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 2px;
+    letter-spacing: -0.01em;
 }
 
 .accent {
     color: #007FFF;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 10px auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo:hover {
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-}
-
 .alt-nickname {
-    color: #333;
-    margin: 5px 0;
-    line-height: 1.6;
+    color: #7a8a9e;
+    font-size: 0.78rem;
+    margin: 4px 0 0;
+    line-height: 1.5;
+    transition: color 0.3s ease;
 }
 
-section {
+.tagline {
+    font-size: 0.82rem;
+    margin: 12px 0 0;
+    color: #4a5568;
+    transition: color 0.3s ease;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 48px 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #dce8f2;
+    border-radius: 0;
+    padding: 20px 24px;
+    transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: #afc8de;
+}
+
+.card h2 {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #007FFF;
+    margin: 0 0 20px;
+    padding: 0;
+    border: none;
+}
+
+.card-fav {
     text-align: center;
-    margin-top: 40px;
 }
 
-h2 {
-    border-bottom: none;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    font-weight: 600;
+.card-fav h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
 }
 
+.icon-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.icon-button,
 .service-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 8px;
-    padding: 12px 20px;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 12px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    width: 180px;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.service-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.icon-button > *,
+.service-button > * {
+    position: relative;
+    z-index: 2;
+}
+
+.icon-button::before,
+.service-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        115deg,
+        transparent 8%,
+        rgba(255, 255, 255, 0.28) 8%,
+        rgba(255, 255, 255, 0.28) 26%,
+        transparent 26%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.18) 40%,
+        rgba(255, 255, 255, 0.18) 56%,
+        transparent 56%,
+        transparent 70%,
+        rgba(255, 255, 255, 0.1) 70%,
+        rgba(255, 255, 255, 0.1) 86%,
+        transparent 86%
+    );
+    transform: translateX(-110%);
+    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
+    z-index: 1;
+}
+
+.icon-button::after,
+.service-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.7, 0, 0.3, 1) 0.08s;
+    z-index: 0;
+}
+
+.icon-button:hover::before,
+.service-button:hover::before {
+    transform: translateX(110%);
+}
+
+.icon-button:hover::after,
+.service-button:hover::after {
+    opacity: 1;
 }
 
 .icon-button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 65px;
-    height: 65px;
-    margin: 8px;
-    font-size: 32px;
+    gap: 10px;
+    height: 44px;
+    padding: 0 16px;
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
-    border-radius: 20px;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    border-radius: 0;
 }
 
-.icon-button:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.tooltip-container {
-    position: relative;
-}
-
-.tooltip-text {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
+.icon-button .label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     white-space: nowrap;
-    z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-    pointer-events: none;
 }
 
-.tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -6px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
+.discord-swap {
+    display: inline-flex;
+    overflow: hidden;
 }
 
-body[data-theme="dark"] .tooltip-text {
-    background-color: #f2efe4;
-    color: #000;
+.discord-swap .discord-default,
+.discord-swap .discord-hover {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: max-width 0.55s cubic-bezier(0.7, 0, 0.3, 1),
+                opacity 0.55s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-body[data-theme="dark"] .tooltip-text::after {
-    border-color: #f2efe4 transparent transparent transparent;
-}
-
-.tooltip-container:hover .tooltip-text,
-.tooltip-container:focus .tooltip-text,
-.tooltip-container:active .tooltip-text {
-    visibility: visible;
+.discord-swap .discord-default {
+    max-width: 60px;
     opacity: 1;
-    transform: translateX(-50%) translateY(-5px);
+}
+
+.discord-swap .discord-hover {
+    max-width: 0;
+    opacity: 0;
+}
+
+.discord:hover .discord-swap .discord-default {
+    max-width: 0;
+    opacity: 0;
+}
+
+.discord:hover .discord-swap .discord-hover {
+    max-width: 90px;
+    opacity: 1;
+}
+
+.discord .tooltip-text {
+    display: none;
+}
+
+.project-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.service-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    border-radius: 0;
 }
 
 .discord {
@@ -251,26 +313,213 @@ body[data-theme="dark"] .tooltip-text::after {
     background-color: #007FFF;
 }
 
-@media (max-width: 600px) {
-    .service-button {
-        width: 90%;
-        margin: 10px auto;
-        display: block;
-    }
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1e293b;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    z-index: 100;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1e293b transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text,
+.tooltip-container:focus .tooltip-text,
+.tooltip-container:active .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
 }
 
 .footer-image {
-    width: 100%;
-    max-width: 80px;
+    width: 72px;
     height: auto;
-    margin: 20px auto;
     display: block;
+    margin: 4px auto 0;
 }
 
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 10px;
-    font-size: 14px;
-    color: #777;
+    padding: 12px 0 4px;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.toggle-switch {
+    width: 44px;
+    height: 22px;
+    background: #c0cdd8;
+    border-radius: 22px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-handle {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+}
+
+body[data-theme="dark"] {
+    background-color: #000f1e;
+    color: #e2e8f0;
+}
+
+body[data-theme="dark"] .sidebar {
+    border-right-color: #0d2a42;
+}
+
+body[data-theme="dark"] .alt-nickname {
+    color: #5a7189;
+}
+
+body[data-theme="dark"] .tagline {
+    color: #7a8a9e;
+}
+
+body[data-theme="dark"] .card {
+    background-color: #00152a;
+    border-color: #0d2a42;
+}
+
+body[data-theme="dark"] .card:hover {
+    border-color: #15395a;
+}
+
+body[data-theme="dark"] .toggle-switch {
+    background: #007FFF;
+}
+
+body[data-theme="dark"] .toggle-handle {
+    left: 25px;
+}
+
+body[data-theme="dark"] .tooltip-text {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+body[data-theme="dark"] .tooltip-text::after {
+    border-color: #e2e8f0 transparent transparent transparent;
+}
+
+body[data-theme="dark"] footer {
+    color: #3d5168;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #c8ddf0;
+        padding: 48px 24px 28px;
+    }
+
+    body[data-theme="dark"] .sidebar {
+        border-right: none;
+        border-bottom-color: #0d2a42;
+    }
+
+    .main-content {
+        padding: 20px 16px 24px;
+    }
+
+    .card {
+        padding: 18px 20px;
+    }
+
+    .icon-group {
+        justify-content: center;
+    }
+
+    .project-group {
+        grid-template-columns: 1fr;
+    }
+
+    .icon-button {
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .icon-button .label,
+    .discord-swap {
+        display: none;
+    }
+
+    .service-button {
+        padding: 11px 16px;
+        font-size: 0.85rem;
+    }
+
+    .icon-button.discord {
+        overflow: visible;
+    }
+
+    .icon-button.discord::before,
+    .icon-button.discord::after {
+        display: none;
+    }
+
+    .discord .tooltip-text {
+        display: block;
+    }
+
+    .discord:hover .tooltip-text,
+    .discord:focus .tooltip-text,
+    .discord:active .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    }
 }
